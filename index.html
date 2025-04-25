@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>996 Farms</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="996 Farms">
+                <h1 class="company">996 Farms</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#our-story">Our Story</a></li>
+                    <li><a href="#quality">Quality Standards</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Checkbox (Hidden) -->
+            <input type="checkbox" id="mobile-menu-checkbox" class="mobile-menu-checkbox">
+
+            <!-- Mobile Menu Toggle -->
+            <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Mobile Menu Overlay -->
+            <label for="mobile-menu-checkbox" class="mobile-menu-overlay"></label>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#our-story">Our Story</a></li>
+                    <li><a href="#quality">Quality Standards</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#products">Our Products</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content animate">
+                <h1>996 FARMS</h1>
+                <p>From Our Fields to Your Table — Premium Pineapples, Grown with Care
+                    Welcome to West Africa’s finest source of fresh, flavorful pineapples. At our farm in Ghana, we grow each fruit with passion, care, and a commitment to quality.
+                    Our pineapples are handpicked at peak ripeness, ensuring a naturally sweet taste and juicy texture your customers will love. Whether you're a local processor, fresh produce distributor, or international buyer, you can count on our reliable supply and exceptional standards.
+                    Experience the difference sweetness you can taste, quality you can trust.</p>
+                <a href="#talent-pool" class="btn">Access Our Talent</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Record Section -->
+    <section class="track-record" id="our-story">
+        <div class="container">
+            <div class="section-title">
+                <h2>OUR STORY</h2>
+            </div>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <div style="width:40px;height:40px;position:relative;">
+                            <div style="width:30px;height:20px;border:3px solid;border-radius:3px;position:absolute;top:0;left:5px;"></div>
+                            <div style="width:15px;height:15px;border:3px solid;border-radius:50%;position:absolute;bottom:0;left:12px;"></div>
+                        </div>
+                    </div>
+                    <h3>FARM HISTORY</h3>
+                    <p>Established in 2024, we've grown from a small family farm to a leading pineapple producer in Ghana.</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <div style="width:40px;height:40px;position:relative;">
+                            <div style="width:20px;height:20px;border:3px solid;border-radius:3px;position:absolute;top:5px;left:10px;"></div>
+                            <div style="width:3px;height:15px;background:currentColor;position:absolute;bottom:0;left:18px;"></div>
+                        </div>
+                    </div>
+                    <h3>FARM SIZE</h3>
+                    <p>Over 10 acres of prime pineapple-growing land in Ghana's tropical region.</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <div style="width:40px;height:40px;position:relative;">
+                            <div style="width:30px;height:30px;border:3px solid;border-radius:3px;position:absolute;top:5px;left:5px;"></div>
+                            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:12px;left:10px;"></div>
+                            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:20px;left:10px;"></div>
+                            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:28px;left:10px;"></div>
+                        </div>
+                    </div>
+                    <h3>ANNUAL PRODUCTION</h3>
+                    <p>Over 300,000 premium pineapples harvested each year.</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">
+                        <div style="width:40px;height:40px;position:relative;">
+                            <div style="width:20px;height:20px;border:3px solid;border-radius:50%;position:absolute;top:5px;left:10px;"></div>
+                            <div style="width:3px;height:15px;background:currentColor;position:absolute;bottom:0;left:18px;"></div>
+                            <div style="width:15px;height:3px;background:currentColor;position:absolute;bottom:5px;left:12px;"></div>
+                        </div>
+                    </div>
+                    <h3>COMMUNITY</h3>
+                    <p>Employing over 20 local workers with fair wages and benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Features Section -->
+        <section class="features" id="quality">
+            <div class="container">
+                <div class="section-title">
+                    <h2>WHY CHOOSE 996 FARMS?</h2>
+                </div>
+        
+                <!-- Carousel Navigation Targets -->
+                
+                <div id="slide1"></div>
+                <div id="slide2"></div>
+                <div id="slide3"></div>
+                <div id="slide4"></div>
+                <div id="slide5"></div>
+        
+                <!-- Features Container -->
+                <div class="features-container">
+                    <!-- First Slide: 3 Cards -->
+                    <div class="feature-box" id="feature-1">
+                        <div class="feature-img1"></div>
+                        <div class="feature-content">
+                            <h3>UNMATCHED QUALITY</h3>
+                            <ul class="feature-list">
+                                <li>Grown in nutrient-rich soil under optimal tropical conditions in Ghana.</li>
+                                <li>Carefully selected varieties for natural sweetness and high juice content.</li>
+                                <li>Hand-harvested at peak ripeness to preserve flavor and texture.</li>
+                                <li>Strict post-harvest handling to avoid bruising and contamination.</li>
+                                <li>Regular quality control audits to meet both local and international standards.</li>
+                            </ul>
+                            <a href="#feature-1" class="read-more-btn">Read More</a>    
+                        </div>
+                    </div>
+                    <div class="feature-box" id="feature-2">
+                        <div class="feature-img2"></div>
+                        <div class="feature-content">
+                            <h3>RELIABLE & SCALABLE SUPPLY</h3>
+                            <ul class="feature-list">
+                                <li>12-month cultivation cycle ensures year-round availability.</li>
+                                <li>Structured harvesting schedule for consistent delivery.</li>
+                                <li>Dedicated team managing logistics for local and export markets.</li>
+                                <li>Partnerships with local processors and supply hubs like Blue Skies.</li>
+                                <li>Ready to scale for international exports with appropriate certifications.</li>
+                            </ul>
+                            <a href="#feature-2" class="read-more-btn">Read More</a>    
+                        </div>
+                    </div>
+                    <div class="feature-box" id="feature3">
+                        <div class="feature-img6"></div>
+                        <div class="feature-content">
+                            <h3>SUSTAINABLE & ETHICAL FARMING</h3>
+                            <ul class="feature-list">
+                                <li>Eco-friendly farming practices that protect soil health and biodiversity.</li>
+                                <li>Minimal chemical usage with natural pest control techniques.</li>
+                                <li>Employment and training opportunities for local communities.</li>
+                                <li>Water-efficient irrigation systems and crop rotation methods./li>
+                                <li>Transparent operations aligned with global agricultural sustainability goals.</li>
+                            </ul>
+                            <a href="#feature-3" class="read-more-btn">Read More</a>    
+                        </div>
+                    </div>
+                    <!-- Second Slide: 2 Cards -->
+                    <div class="feature-box" id="feature-4">
+                        <div class="feature-img4"></div>
+                        <div class="feature-content">
+                            <h3>PROFESSIONAL STANDARDS</h3>
+                            <ul class="feature-list">
+                                <li>Responsive customer service and business communication.</li>
+                                <li>Export-ready packaging and documentation.</li>
+                                <li>Competitive and transparent pricing structure.</li>
+                                <li>Efficient order tracking and fulfillment.</li>
+                                <li>Available for B2B contracts and long-term supply agreements.</li>
+                            </ul>
+                            <a href="#feature-4" class="read-more-btn">Read More</a>    
+                        </div>
+                    </div>
+                    <div class="feature-box" id="feature-5">
+                        <div class="feature-img5"></div>
+                        <div class="feature-content">
+                            <h3>TRUSTED BY INDUSTRY PATNERS</h3>
+                            <ul class="feature-list">
+                                <li>Currently supplying to reputable local companies such as Blue Skies.</li>
+                                <li>Positive feedback on taste, consistency, and delivery timelines.</li>
+                                <li>Built a reputation for reliability and responsiveness.</li>
+                                <li>Actively forming partnerships with international buyers.</li>
+                                <li>Ready to meet volume, quality, and certification demands for global trade.</li>
+                            </ul>
+                            <a href="#feature-5" class="read-more-btn">Read More</a>   
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carousel Navigation Buttons -->
+                <div class="carousel-nav">
+                    <a href="#slide1" class="carousel-dot">1</a>
+                    <a href="#slide2" class="carousel-dot">2</a>
+                    <a href="#slide3" class="carousel-dot">3</a>
+                    <a href="#slide4" class="carousel-dot">4</a>
+                    <a href="#slide5" class="carousel-dot">5</a>
+                </div>
+        
+                
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <!-- Testimonials Section -->
+<section class="process-section" id="process">
+    <div class="container">
+        <div class="section-heading">
+            <h2>OUR FARM PROCESS</h2>
+            <p>From planting to harvest, we follow meticulous processes to ensure the highest quality pineapples.</p>
+        </div>
+        
+        <div class="video-container">
+            <!-- Video 1 - Land Preparation -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Land Preparation</h3>
+                <p>See how we prepare our fields with optimal soil conditions for pineapple cultivation.</p>
+            </div>
+            
+            <!-- Video 2 - Planting -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Planting Process</h3>
+                <p>Our careful planting techniques ensure healthy growth from the very beginning.</p>
+            </div>
+            
+            <!-- Video 3 - Cultivation -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Cultivation Care</h3>
+                <p>How we nurture our pineapple plants during the growth cycle.</p>
+            </div>
+            
+            <!-- Video 4 - Harvesting -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Harvesting Techniques</h3>
+                <p>Watch our skilled workers hand-pick pineapples at peak ripeness.</p>
+            </div>
+            
+            <!-- Video 5 - Quality Control -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Quality Control</h3>
+                <p>Our rigorous inspection process ensures only the best pineapples are selected.</p>
+            </div>
+            
+            <!-- Video 6 - Packaging & Shipping -->
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Packaging & Shipping</h3>
+                <p>How we carefully prepare our pineapples for local and international markets.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Talent Pool Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>OUR PRODUCTS</h2>
+            </div>
+            <div class="steps-container animate">
+                <div class="step">
+                    <p>We specialize in premium Sugar loaf pineapples, known for their golden flesh, high sugar content, and low acidity.</p>
+                </div>
+                <div class="step">
+                    <p>Our pineapples are available fresh, with options for bulk wholesale, export-ready packaging, or processing.</p>
+                </div>
+                <div class="step">
+                    <p>We offer year-round supply with flexible order quantities to meet your business needs.</p>
+                </div>
+                <div class="step">
+                    <p>Custom cutting and packaging services available for processors and retailers.</p>
+                </div>
+            </div>
+            <div class="cta-container">
+                <a href="mailto:info@996farms.com" class="btn">REQUEST PRODUCT CATALOG</a>
+            </div>
+        </div>
+    </section>
+
+   
+<section class="contact-thank-you" id="contact">
+    <div class="container">
+        <div class="contact">
+            <div class="section-title">
+                <h2>CONTACT US</h2>
+            </div>
+        
+            <div class="content-wrapper contact-form">
+                <p>Interested in our premium pineapples? We'd love to discuss how we can meet your needs.</p>
+                <p>Whether you're a local market, international buyer, or processing company, we can provide the quality and quantity you require.</p>
+                <a href="mailto:info@996farms.com" class="btn">Get in Touch</a>
+            </div>
+        </div>
+
+        <div class="thanks">
+            <div class="section-title">
+                <h2>THANK YOU</h2>
+            </div>
+        
+            <div class="content-wrapper thank-you-message">
+                <h2>Thank You for Your Interest in 996 Farms!</h2>
+                <p>We appreciate you taking the time to learn about our premium pineapple farm in Ghana. Our team will review your inquiry and get back to you shortly.</p>
+                <p>In the meantime, feel free to explore more about our farming practices and products.</p>
+                <a href="#home" class="btn">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+        <footer>
+        <div class="container">
+            <p>© 2025 996 Farms. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span class="icon-text">LinkedIn</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.246 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                    </svg>
+                    <span class="icon-text">YouTube</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
+                    <span class="icon-text">Facebook</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+        <script>
+            // JavaScript for Carousel Navigation
+          
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            const featuresContainer = document.querySelector('.features-container');
+
+            let screenwidth = window.innerWidth; // Use innerWidth for better accuracy
+            
+
+            let Dwidth; // Declare it globally
+
+            // Define Dwidth based on universal screen sizes
+            if (screenwidth <= 360) {
+                Dwidth = 210;
+            } else if (screenwidth > 360 && screenwidth <= 480) {
+                Dwidth = 210;
+            } else if (screenwidth > 480 && screenwidth <= 786) {
+                Dwidth = 130;
+            } else if (screenwidth > 786 && screenwidth <= 1024) {
+                Dwidth = 70;
+            } else {
+                Dwidth = 75; // Default value for large screens
+            }
+
+          
+
+            carouselDots.forEach((dot, index) => {
+                dot.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor behavior
+
+                    const slideWidth = Dwidth / carouselDots.length; // Calculate slide width
+                    console.log(featuresContainer.className);
+
+                    featuresContainer.style.transform = `translateX(-${index * slideWidth}%)`;
+
+                    // Highlight the active dot
+                    carouselDots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                });
+            });
+
+            // Initialize the first dot as active
+            carouselDots[0].classList.add('active');
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+    const stepsContainer = document.querySelector('.products .steps-container');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            } else {
+                entry.target.classList.remove('animate'); // Reset when out of view
+            }
+        });
+    }, { 
+        threshold: 0.4
+    });
+
+    if (stepsContainer) {
+        observer.observe(stepsContainer);
+    }
+});
+
+
+        </script>
+</body>
+</html>
