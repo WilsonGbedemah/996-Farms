@@ -400,12 +400,6 @@ header.scrolled {
     }
 }
 
-
-/* .stat-box:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-} */
-
 .stat-icon {
     width: 80px;
     height: 80px;
@@ -457,7 +451,6 @@ header.scrolled {
     80%  { transform: translateX(0) translateY(0); }
     100% { transform: translateX(0) translateY(-3px); }
 }
-
 
 .stat-box h3 {
     color: var(--primary-color);
@@ -599,6 +592,7 @@ header.scrolled {
     position: relative;
     overflow: hidden;
     text-decoration: none;
+    display: inline-block; /* Added for better click handling */
 }
 
 .read-more-btn:hover {
@@ -606,17 +600,32 @@ header.scrolled {
     color: var(--white);
 }
 
+
 .read-more-btn::after {
-    content: "";
+    content: "▼";
     display: inline-block;
     margin-left: 5px;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid currentColor;
     transition: transform 0.3s ease;
+    font-size: 0.8em;
 }
+
+.feature-box.expanded .read-more-btn::after {
+    transform: rotate(180deg);
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    overflow: hidden;
+    max-height: 100px;
+    transition: max-height 0.5s ease;
+}
+
+.feature-box.expanded .feature-list {
+    max-height: 1000px;
+}
+
 
 /* Carousel Navigation */
 .carousel-nav {
@@ -627,8 +636,8 @@ header.scrolled {
 .carousel-nav a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     border-radius: 50px;
     margin: 0 5px;
     text-decoration: none;
@@ -711,6 +720,7 @@ header.scrolled {
     overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    position: relative;
 }
 
 .video-card:hover {
@@ -745,6 +755,20 @@ header.scrolled {
     padding: 0 20px 20px;
     color: var(--text-color);
     text-align: center;
+}
+
+/* Video Preview Overlay */
+.video-preview-active .video-wrapper::after {
+    content: 'Preview Playing';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    z-index: 10;
 }
 
 /* Products Section */
@@ -785,8 +809,6 @@ header.scrolled {
     background: rgba(255, 255, 255, 0.15);
 }
 
-
-/* Animation for step items - Fade in from right */
 .products .steps-container .step {
     opacity: 0;
     transform: translateX(100px);
@@ -798,7 +820,6 @@ header.scrolled {
     transform: translateX(0);
 }
 
-/* Staggered animation delays */
 .products .steps-container.animate .step:nth-child(1) {
     transition-delay: 0.1s;
 }
@@ -887,6 +908,7 @@ header.scrolled {
 .contact-thank-you .thanks {
     margin-top: 50px;
 }
+
 /* Footer */
 footer {
     background-color: var(--secondary-color);
@@ -975,34 +997,91 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    /* Track Record Section Fix */
+    .track-record {
+        display: block;
+    }
+    
+    .stat-box {
+        transform: none !important;
+        animation: fadeInUp 0.8s forwards !important;
+    }
+
+    /* Vertical Layout for All Sections */
+    .stats-container,
+    .features-container,
+    .video-container,
+    .steps-container {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Feature Boxes Adjustments */
+    .features-container {
+        width: 100% !important;
+        transform: none !important;
+        flex-direction: column;
+    }
+    
+    .feature-box {
+        width: 100% !important;
+        margin: 0 0 20px 0 !important;
+        height: auto;
+        flex: 1 1 auto;
+    }
+    
+    .feature-img1, .feature-img2, .feature-img6, .feature-img4, .feature-img5 {
+        height: 250px !important;
+    }
+    
+    /* Hide Carousel Nav on Mobile */
+    .carousel-nav {
+        display: none;
+    }
+    
+    /* Hero Section Adjustments */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 0 60px;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
     
+    /* Section Title Adjustments */
     .section-title h2,
     .process-section .section-heading h2 {
         font-size: 2rem;
     }
     
-    .feature-box {
-        flex: 0 0 35%;
+    /* Section Padding Adjustments */
+    .track-record,
+    .process-section,
+    .products,
+    .contact-thank-you,
+    .features {
+        padding: 60px 0 !important;
     }
     
-    .video-container {
-        grid-template-columns: 1fr;
+    /* Ensure All Animated Elements Are Visible */
+    .feature-box,
+    .video-card,
+    .step {
+        opacity: 1 !important;
+        transform: none !important;
     }
     
-    .products .steps-container {
-        grid-template-columns: 1fr;
-    }
-    
+    /* Contact Section Adjustments */
     .contact-thank-you .content-wrapper {
         padding: 30px;
     }
-    
-    .stat-box, .feature-box {
-        transform: translateX(0) !important;
-        animation: fadeInUp 0.8s forwards !important;
+
+    /* Video Card Adjustments */
+    .video-card {
+        width: 100%;
     }
 }
 
@@ -1016,30 +1095,38 @@ footer p {
         font-size: 1.8rem;
     }
     
-    .feature-box {
-        flex: 0 0 50%;
-    }
-    
     .contact-thank-you .content-wrapper {
         padding: 20px;
-    }
-    
-    .contact-thank-you .thank-you-message h2 {
-        font-size: 1.8rem;
-    }
-    
-    .contact-thank-you p {
-        font-size: 1rem;
     }
     
     .btn {
         font-size: 0.9rem;
         padding: 10px 25px;
     }
+
+    .feature-img1, .feature-img2, .feature-img6, .feature-img4, .feature-img5 {
+        height: 200px !important;
+    }
 }
 
 @media (max-width: 360px) {
-    .feature-box {
-        flex: 0 0 50%;
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* New Keyframes for Mobile Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
