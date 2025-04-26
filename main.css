@@ -37,6 +37,39 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--secondary-color);
 }
 
+/* Banner Styles */
+.banner {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 99;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.banner-cont {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-info strong {
+    font-size: 1rem;
+}
+
+.close-banner {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+    line-height: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -579,8 +612,8 @@ header.scrolled {
 }
 
 .read-more-btn {
-    background-color: var(--light-bg);
-    color: var(--primary-color);
+    background-color: var(--accent-color); 
+    color: var(--secondary-color); 
     border: none;
     padding: 10px 20px;
     border-radius: 50px;
@@ -592,14 +625,16 @@ header.scrolled {
     position: relative;
     overflow: hidden;
     text-decoration: none;
-    display: inline-block; /* Added for better click handling */
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
 }
 
 .read-more-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: var(--accent-hover); 
+    color: var(--secondary-color);
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
 }
-
 
 .read-more-btn::after {
     content: "▼";
@@ -923,6 +958,10 @@ footer p {
     margin-bottom: 15px;
 }
 
+footer p:last-of-type {
+    margin-bottom: 15px;
+}
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -1083,9 +1122,30 @@ footer p {
     .video-card {
         width: 100%;
     }
+
+    .banner {
+        top: 60px;
+    }
+    
+    .banner-info strong {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .banner {
+        top: 50px;
+        padding: 8px 0;
+    }
+    
+    .banner-info strong {
+        font-size: 0.8rem;
+    }
+    
+    .close-banner {
+        font-size: 1.2rem;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }
