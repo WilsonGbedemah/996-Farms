@@ -48,9 +48,10 @@ carouselDots.forEach((dot, index) => {
 
 carouselDots[0].classList.add('active');
 
-// Steps container animation
-const stepsContainer = document.querySelector('.products .steps-container');
-if (stepsContainer) {
+// Animate both Products and Catalog steps containers
+const stepsContainers = document.querySelectorAll('.steps-container');
+
+stepsContainers.forEach(container => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -60,9 +61,17 @@ if (stepsContainer) {
             }
         });
     }, { 
-        threshold: 0.4
+        threshold: 0.3
     });
-    observer.observe(stepsContainer);
+    observer.observe(container);
+});
+
+// Access catalog by button
+function showCatalog() {
+    const catalog = document.getElementById('catalog');
+    if (catalog) {
+        catalog.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
 // Read More Button Functionality
@@ -71,5 +80,37 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
         const featureBox = this.closest('.feature-box');
         featureBox.classList.toggle('expanded');
         this.textContent = featureBox.classList.contains('expanded') ? 'Read Less' : 'Read More';
+    });
+});
+
+// Access catalog by button
+function showCatalog() {
+    const catalogSteps = document.querySelector('.catalog-section .steps-container');
+    if (catalogSteps) {
+        catalogSteps.classList.add('animate');
+        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+
+// Video hover preview
+const videos = document.querySelectorAll('.video-wrapper video');
+
+videos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+        video.currentTime = 0;
+        video.muted = true;
+        video.play();
+    });
+
+    video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+    });
+
+    video.addEventListener('click', () => {
+        video.muted = false;
+        video.setAttribute('controls', 'controls');
+        video.play();
     });
 });

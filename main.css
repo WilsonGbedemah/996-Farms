@@ -57,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
 .banner-info strong {
@@ -113,7 +114,7 @@ header.scrolled {
     margin-top: 2px;
     border: 0px solid #f0d488;
     max-width: 100%;
-    max-height: 90px;
+    max-height: 80px;
     left: 0;
     image-rendering: -webkit-optimize-contrast;
     object-fit: contain;
@@ -759,7 +760,6 @@ header.scrolled {
 }
 
 .video-card:hover {
-    animation: bounceStep 2s;
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
@@ -770,13 +770,30 @@ header.scrolled {
     overflow: hidden;
 }
 
-.video-wrapper iframe {
+.video-wrapper video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.video-wrapper:hover .play-overlay {
+    opacity: 0; /* Hide icon when hovering */
 }
 
 .video-card h3 {
@@ -836,6 +853,7 @@ header.scrolled {
     opacity: 0;
     transform: translateX(-50px);
     transition: all 0.6s ease-out;
+   
 }
 
 .products .step:hover {
@@ -880,6 +898,95 @@ header.scrolled {
 .cta-container {
     text-align: center;
     margin-top: 60px;
+}
+
+/* Catalog Section Initially Hidden */
+.catalog-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--white);
+}
+
+.catalog-section .step img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.catalog-section .steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.catalog-section .step {
+    background: var(--primary-color);
+    padding: 30px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    transition: var(--transition);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.catalog-section .step:hover {
+    animation: bounceStep 2s;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.catalog-section .steps-container.animate .step {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.catalog-section .steps-container.animate .step:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.catalog-section .steps-container.animate .step:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.catalog-section .steps-container.animate .step:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.catalog-section .steps-container.animate .step:nth-child(4) {
+    transition-delay: 0.7s;
+}
+
+.catalog-section .step p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--white);
+}
+
+.catalog-section .section-title h2 {
+    color: var(--white);
+}
+
+
+/* .catalog-section .steps-container .step {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+} */
+
+
+.catalog-section .step p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--white);
+}
+
+
+.catalog-section .section-title h2 {
+    color: var(--white);
 }
 
 /* Combined Contact & Thank You Section */
@@ -1106,13 +1213,20 @@ footer p:last-of-type {
     }
     
     /* Ensure All Animated Elements Are Visible */
-    .feature-box,
+    /* .feature-box,
     .video-card,
     .step {
         opacity: 1 !important;
         transform: none !important;
-    }
+    } */
     
+    /* Catalog Section Adjustments */
+    .catalog-section .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     /* Contact Section Adjustments */
     .contact-thank-you .content-wrapper {
         padding: 30px;
@@ -1130,6 +1244,7 @@ footer p:last-of-type {
     .banner-info strong {
         font-size: 0.9rem;
     }
+    
 }
 
 @media (max-width: 480px) {
@@ -1167,6 +1282,12 @@ footer p:last-of-type {
     .feature-img1, .feature-img2, .feature-img6, .feature-img4, .feature-img5 {
         height: 200px !important;
     }
+
+    .catalog-section .steps-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -1177,13 +1298,18 @@ footer p:last-of-type {
     .section-title h2 {
         font-size: 1.6rem;
     }
+
+    .catalog-section .steps-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* New Keyframes for Mobile Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
     }
     to {
         opacity: 1;
