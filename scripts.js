@@ -114,39 +114,3 @@ videos.forEach(video => {
         video.play();
     });
 });
-
-// Enhanced Pineapple Interaction
-const pineapple = document.querySelector('.pineapple');
-const pineappleSvg = document.querySelector('.pineapple svg');
-
-// Add hover effect
-pineapple.addEventListener('mouseenter', () => {
-    pineappleSvg.style.animationPlayState = 'paused';
-    pineappleSvg.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1.1)';
-    pineappleSvg.style.filter = 'drop-shadow(0 15px 30px rgba(0,0,0,0.4)) drop-shadow(0 0 25px rgba(234, 200, 76, 0.8))';
-});
-
-pineapple.addEventListener('mouseleave', () => {
-    pineappleSvg.style.animationPlayState = 'running';
-    pineappleSvg.style.transform = 'rotateY(15deg) rotateX(5deg) scale(1)';
-    pineappleSvg.style.filter = 'drop-shadow(0 10px 20px rgba(0,0,0,0.3)) drop-shadow(0 0 15px rgba(234, 200, 76, 0.6))';
-});
-
-// Touch interaction for mobile
-let touchTimer;
-pineapple.addEventListener('touchstart', () => {
-    clearTimeout(touchTimer);
-    pineappleSvg.style.animationPlayState = 'paused';
-    pineappleSvg.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1.1)';
-    pineappleSvg.style.filter = 'drop-shadow(0 15px 30px rgba(0,0,0,0.4)) drop-shadow(0 0 25px rgba(234, 200, 76, 0.8))';
-    
-    touchTimer = setTimeout(() => {
-        pineappleSvg.style.animationPlayState = 'running';
-        pineappleSvg.style.transform = 'rotateY(15deg) rotateX(5deg) scale(1)';
-        pineappleSvg.style.filter = 'drop-shadow(0 10px 20px rgba(0,0,0,0.3)) drop-shadow(0 0 15px rgba(234, 200, 76, 0.6))';
-    }, 2000);
-});
-
-pineapple.addEventListener('touchend', () => {
-    clearTimeout(touchTimer);
-});
