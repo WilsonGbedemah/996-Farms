@@ -344,16 +344,6 @@ header.scrolled {
     left: 100%;
 }
 
-/* Hero Layout with Globe */
-/* .hero-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-  } */
-
-
 /* Track Record Section */
 .track-record {
     padding: 100px 0;
@@ -400,7 +390,7 @@ header.scrolled {
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
     gap: 30px;
     position: relative;
     z-index: 2;
@@ -982,12 +972,6 @@ header.scrolled {
 }
 
 
-/* .catalog-section .steps-container .step {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-} */
-
 
 .catalog-section .step p {
     font-size: 1.1rem;
@@ -1223,14 +1207,6 @@ footer p:last-of-type {
     .features {
         padding: 60px 0 !important;
     }
-    
-    /* Ensure All Animated Elements Are Visible */
-    /* .feature-box,
-    .video-card,
-    .step {
-        opacity: 1 !important;
-        transform: none !important;
-    } */
     
     /* Catalog Section Adjustments */
     .catalog-section .steps-container {
