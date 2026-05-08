@@ -142,14 +142,9 @@ if ('serviceWorker' in navigator) {
     });
 })();
 
-// ----- Footer year + last-modified -----
+// ----- Footer year -----
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-const lastModEl = document.getElementById('lastmodified');
-if (lastModEl) {
-    lastModEl.textContent = new Date(document.lastModified).toLocaleDateString();
-}
 
 // ----- Header scroll state + hero parallax -----
 const header = document.querySelector('header');
@@ -451,7 +446,7 @@ if (form) {
             const body = encodeURIComponent(
                 `Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company || '-'}\nCountry: ${data.country || '-'}\nInquiry type: ${data.inquiry_type}\n\nMessage:\n${data.message}`
             );
-            window.location.href = `mailto:info@996farms.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:996farms@gmail.com?subject=${subject}&body=${body}`;
             status.textContent = 'Opening your email client…';
             status.classList.add('ok');
             return;
@@ -474,7 +469,7 @@ if (form) {
             status.classList.add('ok');
             form.reset();
         } catch (err) {
-            status.textContent = `Sorry, we couldn't send that. ${err.message}. You can email us directly at info@996farms.com.`;
+            status.textContent = `Sorry, we couldn't send that. ${err.message}. You can email us directly at 996farms@gmail.com.`;
             status.classList.add('err');
         } finally {
             submitBtn.disabled = false;

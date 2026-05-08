@@ -46,7 +46,7 @@ Copy the `id` it prints into the `[[kv_namespaces]]` block in
 ```sh
 npx wrangler secret put RESEND_API_KEY      # paste the key
 npx wrangler secret put FROM_EMAIL          # e.g. "996 Farms <inquiries@996farms.com>"
-npx wrangler secret put TO_EMAIL            # info@996farms.com
+npx wrangler secret put TO_EMAIL            # 996farms@gmail.com
 npx wrangler secret put ALLOWED_ORIGIN      # https://996farms.com
 ```
 
@@ -92,7 +92,7 @@ Commit and Pages redeploys automatically.
 ## 4. Test it
 
 1. Open the deployed site, fill out the contact form, submit.
-2. Check `info@996farms.com` for the inquiry.
+2. Check `996farms@gmail.com` for the inquiry.
 3. (If KV bound) check Cloudflare dashboard → **Workers & Pages** → your Worker
    → **KV** → `LEADS` to see stored leads.
 

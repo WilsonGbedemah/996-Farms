@@ -8,7 +8,7 @@
  *   RESEND_API_KEY      - API key from https://resend.com (free 100/day)
  *   FROM_EMAIL          - verified sender, e.g. "996 Farms <inquiries@996farms.com>"
  *                         For testing without a verified domain, use "onboarding@resend.dev"
- *   TO_EMAIL            - destination, e.g. "info@996farms.com"
+ *   TO_EMAIL            - destination, e.g. "996farms@gmail.com"
  *
  * Optional:
  *   TURNSTILE_SECRET    - Cloudflare Turnstile secret. If set, the route requires

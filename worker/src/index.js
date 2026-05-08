@@ -2,12 +2,12 @@
  * 996 Farms — Contact form Worker
  *
  * Receives JSON inquiries from the website form, validates them,
- * stops bots, persists the lead, and emails it to info@996farms.com.
+ * stops bots, persists the lead, and emails it to 996farms@gmail.com.
  *
  * Required Worker secrets (set with `wrangler secret put`):
  *   RESEND_API_KEY      — API key from https://resend.com (free 100/day)
  *   FROM_EMAIL          — verified sender, e.g. "996 Farms <inquiries@996farms.com>"
- *   TO_EMAIL            — destination, e.g. "info@996farms.com"
+ *   TO_EMAIL            — destination, e.g. "996farms@gmail.com"
  *   ALLOWED_ORIGIN      — your site origin, e.g. "https://996farms.com"
  *
  * Optional:
