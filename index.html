@@ -721,10 +721,11 @@
     <a href="#contact" class="mobile-cta-bar">Request a Quote</a>
 
     <script>
-        // Set these to your deployed Cloudflare Worker URLs once the backend is live.
-        // Leave empty to fall back: mailto: for contact, default copy for harvest.
-        window.CONTACT_ENDPOINT = '';
-        window.HARVEST_ENDPOINT = ''; // e.g. 'https://996-farms-contact.you.workers.dev/harvest'
+        // Same-origin Vercel endpoints. The contact form submits to the serverless
+        // function at /api/contact; the harvest banner reads /harvest.json (a static
+        // file you can edit + commit to update the live status).
+        window.CONTACT_ENDPOINT = '/api/contact';
+        window.HARVEST_ENDPOINT = '/harvest.json';
     </script>
     <script src="scripts.js"></script>
 </body>

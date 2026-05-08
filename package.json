@@ -1,0 +1,13 @@
+{
+  "name": "996-farms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "996 Farms - Premium Sugarloaf pineapples from Ghana",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
