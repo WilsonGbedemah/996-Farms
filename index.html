@@ -3,40 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>996 Farms</title>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="icon" href="./assets/favicon_io/favicon.ico" type="image/x-icon">
+    <title>996 Farms - Premium Sugarloaf Pineapples from Ghana</title>
+    <meta name="description" content="996 Farms grows premium Sugarloaf pineapples in Ghana for local processors, distributors, and international export buyers. Hand-harvested, year-round supply.">
+    <meta name="keywords" content="Ghana pineapples, Sugarloaf pineapple, pineapple export, 996 Farms, bulk pineapple supplier">
+    <meta name="author" content="996 Farms">
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="996 Farms - Premium Sugarloaf Pineapples from Ghana">
+    <meta property="og:description" content="From our fields to your table. Premium Ghanaian pineapples, hand-harvested at peak ripeness.">
+    <meta property="og:image" content="./images/hero_pine.jpg">
+    <meta property="og:url" content="https://996farms.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="996 Farms - Premium Sugarloaf Pineapples from Ghana">
+    <meta name="twitter:description" content="From our fields to your table. Premium Ghanaian pineapples, hand-harvested at peak ripeness.">
+    <meta name="twitter:image" content="./images/hero_pine.jpg">
+
+    <link rel="canonical" href="https://996farms.com">
+    <link rel="icon" href="./assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./assets/favicon_io/apple-touch-icon.png">
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#1D3528">
+
+    <!-- Fonts: preconnect for faster load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Structured data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "996 Farms",
+      "url": "https://996farms.com",
+      "logo": "https://996farms.com/images/logo.jpg",
+      "description": "Premium Sugarloaf pineapple producer in Ghana supplying local processors and international export buyers.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GH"
+      },
+      "email": "info@996farms.com",
+      "foundingDate": "2020"
+    }
+    </script>
 </head>
 <body>
-    <div class="banner" style="display: none">
-        <div class="banner-cont">
-            <div class="banner-info">
-                <strong>"🍍 Fresh Pineapples Available Now! Visit our farm stand this Friday at 9:00 a.m. for a free tasting!"</strong>
-            </div>
-            <span class="close-banner">&times;</span>
+    <!-- Live harvest status: fetched from Worker, falls back to default text -->
+    <div class="harvest-banner" id="harvest-banner" hidden>
+        <div class="harvest-cont">
+            <span class="harvest-dot" aria-hidden="true"></span>
+            <span class="harvest-status" id="harvest-status">
+                <strong data-i18n="harvest.label">In season</strong>
+                <span class="harvest-detail" id="harvest-detail" data-i18n="harvest.detail">Sugarloaf available now. Typical lead time 2 weeks.</span>
+            </span>
+            <button class="close-banner" type="button" aria-label="Dismiss">&times;</button>
         </div>
     </div>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="./images/logo.jpg" alt="996 Farms">
-                <h1 class="company">996 Farms</h1>
+                <img src="./images/logo.jpg" alt="996 Farms logo" width="80" height="80">
+                <span class="company">996 Farms</span>
             </div>
             
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#our-story">Our Story</a></li>
-                    <li><a href="#quality">Quality Standards</a></li>
-                    <li><a href="#process">Our Process</a></li>
-                    <li><a href="#products">Our Products</a></li>
-                    <li><a href="#catalog">Our Catalog</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#our-story" data-i18n="nav.story">Story</a></li>
+                    <li><a href="#quality" data-i18n="nav.quality">Quality</a></li>
+                    <li><a href="#process" data-i18n="nav.process">Process</a></li>
+                    <li><a href="#products" data-i18n="nav.products">Products</a></li>
+                    <li><a href="#catalog" data-i18n="nav.catalog">Catalog</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Language toggle -->
+            <div class="lang-switcher" role="group" aria-label="Language">
+                <button class="lang-btn is-active" data-lang="en" type="button">EN</button>
+                <button class="lang-btn" data-lang="fr" type="button">FR</button>
+            </div>
             
 
             <!-- Mobile Menu Checkbox (Hidden) -->
@@ -55,28 +110,55 @@
             <!-- Mobile Menu -->
             <div class="mobile-menu">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#our-story">Our Story</a></li>
-                    <li><a href="#quality">Quality Standards</a></li>
-                    <li><a href="#process">Our Process</a></li>
-                    <li><a href="#products">Our Products</a></li>
-                    <li><a href="#catalog">Our Catalog</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#our-story" data-i18n="nav.story">Story</a></li>
+                    <li><a href="#quality" data-i18n="nav.quality">Quality</a></li>
+                    <li><a href="#process" data-i18n="nav.process">Process</a></li>
+                    <li><a href="#products" data-i18n="nav.products">Products</a></li>
+                    <li><a href="#catalog" data-i18n="nav.catalog">Catalog</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
+                <div class="lang-switcher mobile" role="group" aria-label="Language">
+                    <button class="lang-btn is-active" data-lang="en" type="button">EN</button>
+                    <button class="lang-btn" data-lang="fr" type="button">FR</button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="./images/hero_pine.jpg" aria-hidden="true">
+            <source src="./assets/Harvesting.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay" aria-hidden="true"></div>
         <div class="container hero-flex">
             <div class="hero-content animate">
-                <h1>996 FARMS</h1>
-                <p>From Our Fields to Your Table — Premium Ghanaian Pineapples
-                    Grown with passion and handpicked at peak ripeness, our pineapples deliver unmatched sweetness and quality. 
-                    Whether you're a local processor, distributor, or international buyer, trust us for a reliable supply of fresh, flavorful fruit.</p>
-                    <a href="#catalog" class="btn">Access Our Fruits</a>
+                <h1 data-i18n="hero.h1">996 FARMS</h1>
+                <p data-i18n="hero.p">From Our Fields to Your Table. Premium Ghanaian Pineapples grown with passion and handpicked at peak ripeness, our pineapples deliver unmatched sweetness and quality. Whether you're a local processor, distributor, or international buyer, trust us for a reliable supply of fresh, flavorful fruit.</p>
+                <a href="#catalog" class="btn" data-i18n="hero.cta">Access Our Fruits</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust-strip" aria-label="Standards and partners">
+        <div class="container">
+            <p class="trust-strip-label" data-i18n="trust.label">Supplying premium fresh-cut partners</p>
+            <div class="partner-logos">
+                <a href="https://blueskies.com/global/" target="_blank" rel="noopener noreferrer" class="partner-logo-link" aria-label="Blue Skies Ghana partner">
+                    <img src="./images/blue-skies-logo-black.png" alt="Blue Skies" class="partner-logo" loading="lazy" width="74" height="93">
+                    <span class="partner-name">Blue Skies</span>
+                </a>
+                <!-- TODO: drop more partner logos here as relationships are signed -->
+            </div>
+            <ul class="trust-strip-list">
+                <li><span data-i18n="trust.haccp">HACCP Ready</span></li>
+                <li><span data-i18n="trust.export">Export Ready</span></li>
+                <li><span data-i18n="trust.sustainable">Sustainable Farming</span></li>
+                <li><span data-i18n="trust.quality">Quality Audited</span></li>
+                <li><span data-i18n="trust.fair">Fair Wages</span></li>
+            </ul>
         </div>
     </section>
 
@@ -84,167 +166,161 @@
     <section class="track-record" id="our-story">
         <div class="container">
             <div class="section-title">
-                <h2>OUR STORY</h2>
+                <h2 data-i18n="story.title">OUR STORY</h2>
             </div>
             <div class="stats-container">
                 <div class="stat-box">
-                    <div class="stat-icon">
-                        <div style="width:40px;height:40px;position:relative;">
-                            <div style="width:30px;height:20px;border:3px solid;border-radius:3px;position:absolute;top:0;left:5px;"></div>
-                            <div style="width:15px;height:15px;border:3px solid;border-radius:50%;position:absolute;bottom:0;left:12px;"></div>
-                        </div>
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
                     </div>
-                    <h3>FARM HISTORY</h3>
-                    <p>Established in 2020, we've grown from a small family farm to a leading pineapple producer in Ghana.</p>
+                    <div class="stat-counter"><span class="counter" data-target="6">0</span><span class="stat-suffix">+</span></div>
+                    <h3 data-i18n="story.history.title">FARM HISTORY</h3>
+                    <p data-i18n="story.history.body">Established in 2020, we've grown from a small family farm to a leading pineapple producer in Ghana.</p>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-icon">
-                        <div style="width:40px;height:40px;position:relative;">
-                            <div style="width:20px;height:20px;border:3px solid;border-radius:3px;position:absolute;top:5px;left:10px;"></div>
-                            <div style="width:3px;height:15px;background:currentColor;position:absolute;bottom:0;left:18px;"></div>
-                        </div>
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+                        </svg>
                     </div>
-                    <h3>FARM SIZE</h3>
-                    <p>With a vast land for production of prime pineapple in Ghana's tropical region.</p>
+                    <h3 data-i18n="story.size.title">FARM SIZE</h3>
+                    <p data-i18n="story.size.body">Spanning fertile land in Ghana's tropical region, optimized for premium pineapple cultivation.</p>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-icon">
-                        <div style="width:40px;height:40px;position:relative;">
-                            <div style="width:30px;height:30px;border:3px solid;border-radius:3px;position:absolute;top:5px;left:5px;"></div>
-                            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:12px;left:10px;"></div>
-                            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:20px;left:10px;"></div>
-                            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:28px;left:10px;"></div>
-                        </div>
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
                     </div>
-                    <h3>ANNUAL PRODUCTION</h3>
-                    <p>Annual prduction is determined by our clients on the number of tonnes of pineapple they need each year.</p>
+                    <h3 data-i18n="story.prod.title">ANNUAL PRODUCTION</h3>
+                    <p data-i18n="story.prod.body">Annual production is tailored to clients, scaling with the tonnage they need each year.</p>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-icon">
-                        <div style="width:40px;height:40px;position:relative;">
-                            <div style="width:20px;height:20px;border:3px solid;border-radius:50%;position:absolute;top:5px;left:10px;"></div>
-                            <div style="width:3px;height:15px;background:currentColor;position:absolute;bottom:0;left:18px;"></div>
-                            <div style="width:15px;height:3px;background:currentColor;position:absolute;bottom:5px;left:12px;"></div>
-                        </div>
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
                     </div>
-                    <h3>COMMUNITY</h3>
-                    <p>Employing over 20 local workers with fair wages and benefits.</p>
+                    <div class="stat-counter"><span class="counter" data-target="20">0</span><span class="stat-suffix">+</span></div>
+                    <h3 data-i18n="story.community.title">COMMUNITY</h3>
+                    <p data-i18n="story.community.body">Employing over 20 local workers with fair wages and benefits.</p>
                 </div>
-               <div class="stat-box">
-    <div class="stat-icon">
-        <div style="width:40px;height:40px;position:relative;">
-            <div style="width:30px;height:30px;border:3px solid;border-radius:50%;position:absolute;top:5px;left:5px;"></div>
-            <div style="width:3px;height:20px;background:currentColor;position:absolute;top:10px;left:18px;"></div>
-            <div style="width:20px;height:3px;background:currentColor;position:absolute;top:25px;left:10px;"></div>
-        </div>
-    </div>
-    <h3>SHARES</h3>
-    <p>If people want to buy shares, with the amount they invest, they receive 40% profit at the end of the year.</p>
-</div>
-
-
+                <div class="stat-box">
+                    <div class="stat-icon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <div class="stat-counter"><span class="counter" data-target="40">0</span><span class="stat-suffix">%</span></div>
+                    <h3 data-i18n="story.shares.title">SHARES</h3>
+                    <p data-i18n="story.shares.body">Investors who buy shares receive a 40% profit return at the end of the year, proportional to investment.</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Editorial pull-quote -->
+    <aside class="pull-quote" aria-label="Founder quote">
+        <div class="container">
+            <span class="pull-quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote data-i18n="quote.body">We built 996 to prove Ghanaian fruit can compete globally, not on price, but on consistency.</blockquote>
+            <cite>
+                <span data-i18n="quote.cite-name">Mr. Solomon Nanavi</span>
+                <span class="pull-quote-role" data-i18n="quote.cite-role">Founder, 996 Farms</span>
+            </cite>
+        </div>
+    </aside>
+
+    <!-- Section divider: organic curve -->
+    <div class="section-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,32 C240,80 480,0 720,32 C960,64 1200,16 1440,48 L1440,80 L0,80 Z" fill="#1D3528"/>
+        </svg>
+    </div>
 
         <!-- Features Section -->
 <section class="features" id="quality">
     <div class="container">
         <div class="section-title">
-            <h2>WHY CHOOSE 996 FARMS?</h2>
+            <h2 data-i18n="why.title">WHY CHOOSE 996 FARMS?</h2>
         </div>
 
-        <!-- Carousel Navigation Targets -->
-        <div id="slide1"></div>
-        <div id="slide2"></div>
-        <div id="slide3"></div>
-        <div id="slide4"></div>
-        <div id="slide5"></div>
-
-        <!-- Features Container -->
+        <!-- Features Grid -->
         <div class="features-container">
-            <!-- First Slide: 3 Cards -->
             <div class="feature-box">
                 <div class="feature-img1"></div>
                 <div class="feature-content">
-                    <h3>UNMATCHED QUALITY</h3>
+                    <h3 data-i18n="why.quality.title">UNMATCHED QUALITY</h3>
                     <ul class="feature-list">
-                        <li>Grown in nutrient-rich soil under optimal tropical conditions in Ghana.</li>
-                        <li>Carefully selected varieties for natural sweetness and high juice content.</li>
-                        <li>Hand-harvested at peak ripeness to preserve flavor and texture.</li>
-                        <li>Strict post-harvest handling to avoid bruising and contamination.</li>
-                        <li>Regular quality control audits to meet both local and international standards.</li>
+                        <li data-i18n="why.quality.li1">Grown in nutrient-rich soil under optimal tropical conditions in Ghana.</li>
+                        <li data-i18n="why.quality.li2">Carefully selected varieties for natural sweetness and high juice content.</li>
+                        <li data-i18n="why.quality.li3">Hand-harvested at peak ripeness to preserve flavor and texture.</li>
+                        <li data-i18n="why.quality.li4">Strict post-harvest handling to avoid bruising and contamination.</li>
+                        <li data-i18n="why.quality.li5">Regular quality control audits to meet both local and international standards.</li>
                     </ul>
-                    <button class="read-more-btn">Read More</button>    
+                    <button class="read-more-btn" data-i18n="readmore">Read More</button>
                 </div>
             </div>
             <div class="feature-box">
                 <div class="feature-img2"></div>
                 <div class="feature-content">
-                    <h3>RELIABLE & SCALABLE SUPPLY</h3>
+                    <h3 data-i18n="why.scale.title">RELIABLE &amp; SCALABLE SUPPLY</h3>
                     <ul class="feature-list">
-                        <li>12-month cultivation cycle ensures year-round availability.</li>
-                        <li>Structured harvesting schedule for consistent delivery.</li>
-                        <li>Dedicated team managing logistics for local and export markets.</li>
-                        <li>Partnerships with local processors and supply hubs like Blue Skies.</li>
-                        <li>Ready to scale for international exports with appropriate certifications.</li>
+                        <li data-i18n="why.scale.li1">12-month cultivation cycle ensures year-round availability.</li>
+                        <li data-i18n="why.scale.li2">Structured harvesting schedule for consistent delivery.</li>
+                        <li data-i18n="why.scale.li3">Dedicated team managing logistics for local and export markets.</li>
+                        <li data-i18n="why.scale.li4">Partnerships with local processors and supply hubs like Blue Skies.</li>
+                        <li data-i18n="why.scale.li5">Ready to scale for international exports with appropriate certifications.</li>
                     </ul>
-                    <button class="read-more-btn">Read More</button>    
+                    <button class="read-more-btn" data-i18n="readmore">Read More</button>
                 </div>
             </div>
             <div class="feature-box">
                 <div class="feature-img6"></div>
                 <div class="feature-content">
-                    <h3>SUSTAINABLE & ETHICAL FARMING</h3>
+                    <h3 data-i18n="why.eco.title">SUSTAINABLE &amp; ETHICAL FARMING</h3>
                     <ul class="feature-list">
-                        <li>Eco-friendly farming practices that protect soil health and biodiversity.</li>
-                        <li>Minimal chemical usage with natural pest control techniques.</li>
-                        <li>Employment and training opportunities for local communities.</li>
-                        <li>Water-efficient irrigation systems and crop rotation methods.</li>
-                        <li>Transparent operations aligned with global agricultural sustainability goals.</li>
+                        <li data-i18n="why.eco.li1">Eco-friendly farming practices that protect soil health and biodiversity.</li>
+                        <li data-i18n="why.eco.li2">Minimal chemical usage with natural pest control techniques.</li>
+                        <li data-i18n="why.eco.li3">Employment and training opportunities for local communities.</li>
+                        <li data-i18n="why.eco.li4">Water-efficient irrigation systems and crop rotation methods.</li>
+                        <li data-i18n="why.eco.li5">Transparent operations aligned with global agricultural sustainability goals.</li>
                     </ul>
-                    <button class="read-more-btn">Read More</button>    
+                    <button class="read-more-btn" data-i18n="readmore">Read More</button>
                 </div>
             </div>
-            <!-- Second Slide: 2 Cards -->
             <div class="feature-box">
                 <div class="feature-img4"></div>
                 <div class="feature-content">
-                    <h3>PROFESSIONAL STANDARDS</h3>
+                    <h3 data-i18n="why.pro.title">PROFESSIONAL STANDARDS</h3>
                     <ul class="feature-list">
-                        <li>Responsive customer service and business communication.</li>
-                        <li>Export-ready packaging and documentation.</li>
-                        <li>Competitive and transparent pricing structure.</li>
-                        <li>Efficient order tracking and fulfillment.</li>
-                        <li>Available for B2B contracts and long-term supply agreements.</li>
+                        <li data-i18n="why.pro.li1">Responsive customer service and business communication.</li>
+                        <li data-i18n="why.pro.li2">Export-ready packaging and documentation.</li>
+                        <li data-i18n="why.pro.li3">Competitive and transparent pricing structure.</li>
+                        <li data-i18n="why.pro.li4">Efficient order tracking and fulfillment.</li>
+                        <li data-i18n="why.pro.li5">Available for B2B contracts and long-term supply agreements.</li>
                     </ul>
-                    <button class="read-more-btn">Read More</button>    
+                    <button class="read-more-btn" data-i18n="readmore">Read More</button>
                 </div>
             </div>
             <div class="feature-box">
                 <div class="feature-img5"></div>
                 <div class="feature-content">
-                    <h3>TRUSTED BY INDUSTRY PATNERS</h3>
+                    <h3 data-i18n="why.trust.title">TRUSTED BY INDUSTRY PARTNERS</h3>
                     <ul class="feature-list">
-                        <li>Currently supplying to reputable local companies such as Blue Skies.</li>
-                        <li>Positive feedback on taste, consistency, and delivery timelines.</li>
-                        <li>Built a reputation for reliability and responsiveness.</li>
-                        <li>Actively forming partnerships with international buyers.</li>
-                        <li>Ready to meet volume, quality, and certification demands for global trade.</li>
+                        <li data-i18n="why.trust.li1">Currently supplying to reputable local companies such as Blue Skies.</li>
+                        <li data-i18n="why.trust.li2">Positive feedback on taste, consistency, and delivery timelines.</li>
+                        <li data-i18n="why.trust.li3">Built a reputation for reliability and responsiveness.</li>
+                        <li data-i18n="why.trust.li4">Actively forming partnerships with international buyers.</li>
+                        <li data-i18n="why.trust.li5">Ready to meet volume, quality, and certification demands for global trade.</li>
                     </ul>
-                    <button class="read-more-btn">Read More</button>   
+                    <button class="read-more-btn" data-i18n="readmore">Read More</button>
                 </div>
             </div>
         </div>
 
-        <!-- Carousel Navigation Buttons -->
-        <div class="carousel-nav">
-            <a href="#slide1" class="carousel-dot">1</a>
-            <a href="#slide2" class="carousel-dot">2</a>
-            <a href="#slide3" class="carousel-dot">3</a>
-            <a href="#slide4" class="carousel-dot">4</a>
-            <a href="#slide5" class="carousel-dot">5</a>
-        </div>
     </div>
 </section>
 
@@ -253,8 +329,8 @@
 <section class="process-section" id="process">
     <div class="container">
         <div class="section-heading">
-            <h2>OUR FARM PROCESS</h2>
-            <p>From planting to harvest, we follow meticulous processes to ensure the highest quality pineapples.</p>
+            <h2 data-i18n="process.title">OUR FARM PROCESS</h2>
+            <p data-i18n="process.sub">From planting to harvest, we follow meticulous processes to ensure the highest quality pineapples.</p>
         </div>
         
         <div class="video-container">
@@ -262,72 +338,50 @@
             <div class="video-card">
                 <div class="video-wrapper">
                     <video src="./assets/Land Preparation.mp4" preload="metadata" muted playsinline></video>
-                    <div class="play-overlay">
-                        ▶
-                    </div>
+                    <div class="play-overlay" aria-hidden="true">▶</div>
                 </div>
-                <h3>Land Preparation</h3>
-                <p>See how we prepare our fields with optimal soil conditions for pineapple cultivation.</p>
+                <h3 data-i18n="process.v1.title">Land Preparation</h3>
+                <p data-i18n="process.v1.body">See how we prepare our fields with optimal soil conditions for pineapple cultivation.</p>
             </div>
-            
+
             <!-- Video 2 - Planting -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <video src="./assets/Planting Process.mp4" preload="metadata" muted playsinline></video>
-                    <div class="play-overlay">
-                        ▶
-                    </div>
+                    <div class="play-overlay" aria-hidden="true">▶</div>
                 </div>
-                <h3>Planting Process</h3>
-                <p>Our careful planting techniques ensure healthy growth from the very beginning.</p>
+                <h3 data-i18n="process.v2.title">Planting Process</h3>
+                <p data-i18n="process.v2.body">Our careful planting techniques ensure healthy growth from the very beginning.</p>
             </div>
-            
+
             <!-- Video 3 - Cultivation -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <video src="./assets/cult.mp4" preload="metadata" muted playsinline></video>
-                    <div class="play-overlay">
-                        ▶
-                    </div>
+                    <div class="play-overlay" aria-hidden="true">▶</div>
                 </div>
-                <h3>Cultivation Care</h3>
-                <p>How we nurture our pineapple plants during the growth cycle.</p>
+                <h3 data-i18n="process.v3.title">Cultivation Care</h3>
+                <p data-i18n="process.v3.body">How we nurture our pineapple plants during the growth cycle.</p>
             </div>
-            
+
             <!-- Video 4 - Harvesting -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <video src="./assets/Harvesting.mp4" preload="metadata" muted playsinline></video>
-                    <div class="play-overlay">
-                        ▶
-                    </div>
+                    <div class="play-overlay" aria-hidden="true">▶</div>
                 </div>
-                <h3>Harvesting Techniques</h3>
-                <p>Watch our skilled workers hand-pick pineapples at peak ripeness.</p>
+                <h3 data-i18n="process.v4.title">Harvesting Techniques</h3>
+                <p data-i18n="process.v4.body">Watch our skilled workers hand-pick pineapples at peak ripeness.</p>
             </div>
-            
-            <!-- Video 5 - Quality Control -->
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <video src="./asse" preload="metadata" muted playsinline></video>
-                    <div class="play-overlay">
-                        ▶
-                    </div>
-                </div>
-                <h3>Quality Control</h3>
-                <p>Our rigorous inspection process ensures only the best pineapples are selected.</p>
-            </div>
-            
-            <!-- Video 6 - Packaging & Shipping -->
+
+            <!-- Video 5 - Packaging & Delivery -->
             <div class="video-card">
                 <div class="video-wrapper">
                     <video src="./assets/packaging.mp4" preload="metadata" muted playsinline></video>
-                    <div class="play-overlay">
-                        ▶
-                    </div>
+                    <div class="play-overlay" aria-hidden="true">▶</div>
                 </div>
-                <h3>Packaging & Delivery</h3>
-                <p>Our pineapples are carefully prepared and delivered fresh to trusted local partners like Blue Skies, maintaining the highest quality from farm to destination.</p>
+                <h3 data-i18n="process.v5.title">Packaging &amp; Delivery</h3>
+                <p data-i18n="process.v5.body">Our pineapples are carefully prepared and delivered fresh to trusted local partners like Blue Skies, maintaining the highest quality from farm to destination.</p>
             </div>
             
         </div>
@@ -338,24 +392,28 @@
     <section class="products" id="products">
         <div class="container">
             <div class="section-title">
-                <h2>OUR PRODUCTS</h2>
+                <h2 data-i18n="products.title">OUR PRODUCTS</h2>
             </div>
             <div class="steps-container animate">
                 <div class="step">
-                    <p>We specialize in premium Sugar loaf pineapples, known for their golden flesh, high sugar content, and low acidity.</p>
+                    <h3 data-i18n="products.p1.title">Premium Sugarloaf</h3>
+                    <p data-i18n="products.p1.body">Our signature variety, prized for golden flesh, high sugar content, and low acidity.</p>
                 </div>
                 <div class="step">
-                    <p>Our pineapples are available fresh, with options for bulk wholesale, export-ready packaging, or processing.</p>
+                    <h3 data-i18n="products.p2.title">Bulk &amp; Export-Ready</h3>
+                    <p data-i18n="products.p2.body">Available fresh, with options for bulk wholesale, export-grade packaging, or processing.</p>
                 </div>
                 <div class="step">
-                    <p>We offer year-round supply with flexible order quantities to meet your business needs.</p>
+                    <h3 data-i18n="products.p3.title">Year-Round Supply</h3>
+                    <p data-i18n="products.p3.body">Flexible order quantities and a 12-month cultivation cycle to fit your business needs.</p>
                 </div>
                 <div class="step">
-                    <p>Custom cutting and packaging services available for processors and retailers.</p>
+                    <h3 data-i18n="products.p4.title">Custom Cutting</h3>
+                    <p data-i18n="products.p4.body">Custom-cut and packaging services on request for processors and retail partners.</p>
                 </div>
             </div>
             <div class="cta-container">
-                <a href="mailto:info@996farms.com" class="btn">REQUEST PRODUCT CATALOG</a>
+                <a href="#contact" class="btn" data-i18n="products.cta">REQUEST PRODUCT CATALOG</a>
             </div>
         </div>
     </section>
@@ -364,56 +422,256 @@
     <section class="catalog-section" id="catalog">
         <div class="container">
             <div class="section-title">
-                <h2>OUR PINEAPPLE CATALOG</h2>
-                <p>Explore the finest selections of fresh pineapples straight from our fields.</p>
+                <h2 data-i18n="catalog.title">OUR PINEAPPLE CATALOG</h2>
+                <p data-i18n="catalog.subtitle">Explore the finest selections of fresh pineapples straight from our fields.</p>
             </div>
-            <div class="steps-container animate">
-                <div class="step">
-                    <img src="./images/ripe.jpg" alt="Fresh Golden Pineapple" style="width:100%; border-radius:10px;">
-                    <p>Golden ripe pineapples, perfect for fresh markets and export.</p>
+
+            <!-- Quick quote estimator -->
+            <div class="quote-calculator" aria-labelledby="quote-heading">
+                <h3 id="quote-heading" data-i18n="quote.heading">Get a quick estimate</h3>
+                <p class="quote-sub" data-i18n="quote.sub">Adjust the values to get an indicative lead time and price band. Final terms confirmed by quote.</p>
+                <div class="quote-controls">
+                    <label class="quote-field">
+                        <span data-i18n="quote.tonnage">Tonnage</span>
+                        <div class="quote-slider-row">
+                            <input type="range" id="quote-tonnage" min="1" max="100" value="10" step="1">
+                            <output id="quote-tonnage-out">10 t</output>
+                        </div>
+                    </label>
+                    <label class="quote-field">
+                        <span data-i18n="quote.variety">Variety</span>
+                        <select id="quote-variety">
+                            <option value="sugarloaf" data-i18n="quote.var.sugarloaf">Sugarloaf Gold</option>
+                            <option value="cayenne" data-i18n="quote.var.cayenne">Cayenne Sweet</option>
+                            <option value="bulk" data-i18n="quote.var.bulk">Bulk Wholesale</option>
+                            <option value="export" data-i18n="quote.var.export">Premium Export Grade</option>
+                        </select>
+                    </label>
+                    <label class="quote-field">
+                        <span data-i18n="quote.destination">Destination</span>
+                        <select id="quote-destination">
+                            <option value="ghana" data-i18n="quote.dest.gh">Ghana (local)</option>
+                            <option value="ecowas" data-i18n="quote.dest.ecowas">ECOWAS</option>
+                            <option value="europe" data-i18n="quote.dest.eu">Europe</option>
+                            <option value="middle-east" data-i18n="quote.dest.me">Middle East</option>
+                            <option value="other" data-i18n="quote.dest.other">Other / Air freight</option>
+                        </select>
+                    </label>
                 </div>
-                <div class="step">
-                    <img src="./images/caynen.jpg" alt="Sweet Sugarloaf Pineapple" style="width:100%; border-radius:10px;">
-                    <p>Sweet Caynen pineapples, loved for their juicy low-acid flavor.</p>
+                <div class="quote-result">
+                    <div class="quote-result-block">
+                        <span class="quote-result-label" data-i18n="quote.lead">Estimated lead time</span>
+                        <span class="quote-result-value" id="quote-lead">...</span>
+                    </div>
+                    <div class="quote-result-block">
+                        <span class="quote-result-label" data-i18n="quote.price">Indicative price band</span>
+                        <span class="quote-result-value" id="quote-price">...</span>
+                    </div>
+                    <a href="#contact" class="btn quote-cta" data-i18n="quote.cta">Lock this in →</a>
                 </div>
-                <div class="step">
-                    <img src="./images/pineap.jpg" alt="Farm Fresh Pineapple Bunch" style="width:100%; border-radius:10px;">
-                    <p>Freshly harvested pineapple bunches, ready for processing or retail.</p>
-                </div>
-                <div class="step">
-                    <img src="./images/rawImage.jpg" alt="Premium Pineapple Harvest" style="width:100%; border-radius:10px;">
-                    <p>Premium pineapples handpicked at peak ripeness for maximum sweetness.</p>
-                </div>
+                <p class="quote-disclaimer" data-i18n="quote.disclaimer">Estimates only. Real pricing depends on certifications, packaging, season, and freight. Hit "Lock this in" for an exact quote.</p>
+            </div>
+
+            <div class="catalog-grid">
+                <!-- Featured card (large) -->
+                <article class="catalog-card catalog-card--featured" tabindex="0">
+                    <div class="catalog-card-inner">
+                        <div class="catalog-image">
+                            <img src="./images/ripe.jpg" alt="Golden ripe Sugarloaf pineapple" loading="lazy" width="800" height="900">
+                            <span class="catalog-tag" data-i18n="cat.featured">Featured</span>
+                        </div>
+                        <div class="catalog-meta">
+                            <span class="catalog-variety" data-i18n="cat.f.variety">Sugarloaf Gold</span>
+                            <h3 class="catalog-name" data-i18n="cat.f.name">Golden Ripe</h3>
+                            <p class="catalog-blurb" data-i18n="cat.f.blurb">Our signature variety. Honeyed sweetness, low acidity, pale-gold flesh, picked at peak ripeness for fresh markets and premium export.</p>
+                            <ul class="catalog-specs">
+                                <li><span data-i18n="cat.spec.use">Use</span><strong data-i18n="cat.f.use">Fresh / Export</strong></li>
+                                <li><span data-i18n="cat.spec.avail">Availability</span><strong data-i18n="cat.f.avail">Year-round</strong></li>
+                                <li><span data-i18n="cat.spec.pack">Pack</span><strong data-i18n="cat.f.pack">By the kilo or pallet</strong></li>
+                            </ul>
+                            <a href="#contact" class="catalog-cta"><span data-i18n="cat.f.cta">Request samples</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Small card 1 -->
+                <article class="catalog-card" tabindex="0">
+                    <div class="catalog-card-inner">
+                        <div class="catalog-image">
+                            <img src="./images/caynen.jpg" alt="Sweet Cayenne pineapple" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="catalog-meta">
+                            <span class="catalog-variety" data-i18n="cat.s1.variety">Cayenne Sweet</span>
+                            <h3 class="catalog-name" data-i18n="cat.s1.name">Juicy &amp; Mellow</h3>
+                            <p class="catalog-blurb" data-i18n="cat.s1.blurb">Lower acidity, abundant juice. Preferred by processors and canneries.</p>
+                            <a href="#contact" class="catalog-cta"><span data-i18n="cat.inquire">Inquire</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Small card 2 -->
+                <article class="catalog-card" tabindex="0">
+                    <div class="catalog-card-inner">
+                        <div class="catalog-image">
+                            <img src="./images/pineap.jpg" alt="Farm fresh pineapple bunch" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="catalog-meta">
+                            <span class="catalog-variety" data-i18n="cat.s2.variety">Bulk Wholesale</span>
+                            <h3 class="catalog-name" data-i18n="cat.s2.name">Field-Fresh Bunch</h3>
+                            <p class="catalog-blurb" data-i18n="cat.s2.blurb">Bulk crates ready for processing, retail distribution, or contract supply.</p>
+                            <a href="#contact" class="catalog-cta"><span data-i18n="cat.inquire">Inquire</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Small card 3 -->
+                <article class="catalog-card" tabindex="0">
+                    <div class="catalog-card-inner">
+                        <div class="catalog-image">
+                            <img src="./images/rawImage.jpg" alt="Premium export-grade pineapples" loading="lazy" width="600" height="400">
+                        </div>
+                        <div class="catalog-meta">
+                            <span class="catalog-variety" data-i18n="cat.s3.variety">Export Grade</span>
+                            <h3 class="catalog-name" data-i18n="cat.s3.name">Premium Selection</h3>
+                            <p class="catalog-blurb" data-i18n="cat.s3.blurb">Hand-graded for international shipment with uniform size, peak sweetness, and export-ready packaging.</p>
+                            <a href="#contact" class="catalog-cta"><span data-i18n="cat.inquire">Inquire</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
-    
 
-<!-- Contact and thank you section -->
+
+<!-- Contact section -->
 <section class="contact-thank-you" id="contact">
     <div class="container">
         <div class="contact">
             <div class="section-title">
-                <h2>CONTACT US</h2>
+                <h2 data-i18n="contact.title">CONTACT US</h2>
             </div>
-        
-            <div class="content-wrapper contact-form">
-                <p>Interested in our premium pineapples? We'd love to discuss how we can meet your needs.</p>
-                <p>Whether you're a local market, international buyer, or processing company, we can provide the quality and quantity you require.</p>
-                <a href="mailto:info@996farms.com" class="btn">Get in Touch</a>
-            </div>
-        </div>
 
-        <div class="thanks">
-            <div class="section-title">
-                <h2>THANK YOU</h2>
-            </div>
-        
-            <div class="content-wrapper thank-you-message">
-                <h2>Thank You for Your Interest in 996 Farms!</h2>
-                <p>We appreciate you taking the time to learn about our premium pineapple farm in Ghana. Our team will review your inquiry and get back to you shortly.</p>
-                <p>In the meantime, feel free to explore more about our farming practices and products.</p>
-                <a href="#home" class="btn">Back to Home</a>
+            <div class="content-wrapper contact-form-wrapper">
+                <p data-i18n="contact.intro">Interested in our premium pineapples? Whether you're a local market, international buyer, or processing company, we can provide the quality and quantity you require.</p>
+
+                <div class="contact-grid">
+                    <!-- Owner / company contact info -->
+                    <aside class="contact-info">
+                        <h3 data-i18n="contact.reach">Reach the team</h3>
+                        <ul class="contact-info-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                <div>
+                                    <strong data-i18n="contact.owner">Owner</strong>
+                                    <span>Mr. Solomon Nanavi</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <div>
+                                    <strong data-i18n="contact.phone">Phone</strong>
+                                    <a href="tel:+233244108972">+233 244 108 972</a><br>
+                                    <a href="tel:+233245190652">+233 245 190 652</a><br>
+                                    <a href="tel:+233591922211">+233 591 922 211</a>
+                                </div>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <div>
+                                    <strong data-i18n="contact.email">Email</strong>
+                                    <a href="mailto:info@996farms.com">info@996farms.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <div>
+                                    <strong data-i18n="contact.location">Farm location</strong>
+                                    <span data-i18n="contact.location.value">Eastern Region, Ghana</span>
+                                </div>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <div>
+                                    <strong data-i18n="contact.hours">Hours</strong>
+                                    <span data-i18n="contact.hours.value">Mon-Fri, 8:00 to 17:00 GMT</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </aside>
+
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <label class="form-field">
+                            <span data-i18n="form.name">Full name *</span>
+                            <input type="text" name="name" required maxlength="120" autocomplete="name">
+                        </label>
+                        <label class="form-field">
+                            <span data-i18n="form.email">Email *</span>
+                            <input type="email" name="email" required maxlength="200" autocomplete="email">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-field">
+                            <span data-i18n="form.company">Company</span>
+                            <input type="text" name="company" maxlength="200" autocomplete="organization">
+                        </label>
+                        <label class="form-field">
+                            <span data-i18n="form.country">Country</span>
+                            <input type="text" name="country" maxlength="100" autocomplete="country-name">
+                        </label>
+                    </div>
+                    <label class="form-field">
+                        <span data-i18n="form.inquiry">Inquiry type *</span>
+                        <select name="inquiry_type" required>
+                            <option value="" data-i18n="form.inquiry.placeholder">Select one</option>
+                            <option value="bulk" data-i18n="form.inquiry.bulk">Bulk wholesale</option>
+                            <option value="export" data-i18n="form.inquiry.export">International export</option>
+                            <option value="processing" data-i18n="form.inquiry.processing">Processing partner</option>
+                            <option value="investor" data-i18n="form.inquiry.investor">Investor / shares</option>
+                            <option value="other" data-i18n="form.inquiry.other">Other</option>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span data-i18n="form.message">Message *</span>
+                        <textarea name="message" rows="5" required maxlength="2000" data-i18n-placeholder="form.placeholder" placeholder="Volume, timeline, certifications needed, etc."></textarea>
+                    </label>
+
+                    <!-- Honeypot: bots fill this; real users don't see it -->
+                    <label class="honeypot" aria-hidden="true">
+                        Leave this field empty
+                        <input type="text" name="company_website" tabindex="-1" autocomplete="off">
+                    </label>
+
+                    <button type="submit" class="btn" data-i18n="form.submit">Send Inquiry</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+                </div><!-- /.contact-grid -->
             </div>
         </div>
     </div>
@@ -422,30 +680,52 @@
     <!-- Footer -->
         <footer>
         <div class="container">
-            <p>© <span id="year"></span> 996 Farms. All rights reserved.</p>
-            <p>Last Modified: <span id="lastmodified"></span></p>
+            <p>© <span id="year"></span> 996 Farms. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            <p><span data-i18n="footer.modified">Last Modified:</span> <span id="lastmodified"></span></p>
             <div class="social-icons">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <a href="mailto:info@996farms.com" aria-label="Email 996 Farms">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
+                    </svg>
+                    <span class="icon-text">info@996farms.com</span>
+                </a>
+                <a href="https://www.linkedin.com/company/996-farms/" target="_blank" rel="noopener noreferrer" aria-label="996 Farms on LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                     </svg>
                     <span class="icon-text">LinkedIn</span>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.246 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                    </svg>
-                    <span class="icon-text">YouTube</span>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
-                    </svg>
-                    <span class="icon-text">Facebook</span>
-                </a>
             </div>
         </div>
     </footer>
+    <!-- Lightbox (fullscreen image viewer for catalog) -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image viewer">
+        <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" type="button" aria-label="Previous image">&#x2039;</button>
+        <button class="lightbox-next" type="button" aria-label="Next image">&#x203A;</button>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" alt="">
+            <figcaption class="lightbox-caption"></figcaption>
+        </figure>
+    </div>
+
+    <!-- Floating WhatsApp chat -->
+    <a class="whatsapp-fab" href="https://wa.me/233244108972?text=Hello%20996%20Farms%2C%20I%27m%20interested%20in%20your%20pineapples." target="_blank" rel="noopener noreferrer" aria-label="Chat with 996 Farms on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="whatsapp-fab-label">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Sticky mobile CTA -->
+    <a href="#contact" class="mobile-cta-bar">Request a Quote</a>
+
+    <script>
+        // Set these to your deployed Cloudflare Worker URLs once the backend is live.
+        // Leave empty to fall back: mailto: for contact, default copy for harvest.
+        window.CONTACT_ENDPOINT = '';
+        window.HARVEST_ENDPOINT = ''; // e.g. 'https://996-farms-contact.you.workers.dev/harvest'
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>

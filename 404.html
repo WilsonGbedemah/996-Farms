@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found - 996 Farms</title>
+    <meta name="description" content="Sorry, that page doesn't exist. Head back to 996 Farms.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="./assets/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #1D3528;
+            --secondary-color: #1D3527;
+            --accent-color: #EAC84C;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        body::before {
+            width: 400px; height: 400px;
+            background: var(--accent-color);
+            top: -100px; left: -100px;
+        }
+        body::after {
+            width: 500px; height: 500px;
+            background: #4e7c5a;
+            bottom: -150px; right: -150px;
+        }
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 560px;
+            animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .glyph {
+            font-size: clamp(7rem, 20vw, 12rem);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -4px;
+            background: linear-gradient(135deg, var(--accent-color), #f6db6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
+        }
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            opacity: 0.78;
+            margin-bottom: 30px;
+        }
+        .actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--secondary-color);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #f6db6e;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+        }
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: var(--white);
+        }
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <main class="wrap">
+        <div class="glyph">404</div>
+        <h1>This field is empty</h1>
+        <p>The page you're looking for got harvested. Head back to the farm and we'll get you to the right pineapple.</p>
+        <div class="actions">
+            <a href="/" class="btn btn-primary">Back to home</a>
+            <a href="/#contact" class="btn btn-outline">Contact us</a>
+        </div>
+    </main>
+</body>
+</html>

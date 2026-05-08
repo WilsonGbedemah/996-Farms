@@ -1,0 +1,13 @@
+name = "996-farms-contact"
+main = "src/index.js"
+compatibility_date = "2025-05-01"
+
+# After running `wrangler kv namespace create LEADS`, paste the returned id here
+# to enable lead persistence and per-IP rate limiting.
+# [[kv_namespaces]]
+# binding = "LEADS"
+# id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# Set non-secret env vars here (secrets go via `wrangler secret put`)
+# [vars]
+# ALLOWED_ORIGIN = "https://996farms.com"
